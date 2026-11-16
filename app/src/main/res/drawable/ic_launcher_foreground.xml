@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Subtle shadow under strawberry -->
+    <path
+        android:fillColor="#44000000"
+        android:pathData="M54,84 C43,84 31,66 32,50 C33,39 42,35 54,35 C66,35 75,39 76,50 C77,66 65,84 54,84 Z" />
+    <!-- Glossy Red Strawberry Body -->
+    <path
+        android:fillColor="#FFFF2E4C"
+        android:pathData="M54,81 C42,81 30,63 31,47 C32,36 41,32 54,32 C67,32 76,36 77,47 C78,63 66,81 54,81 Z" />
+    <!-- Strawberry Highlight -->
+    <path
+        android:fillColor="#55FFFFFF"
+        android:pathData="M42,40 C37,43 35,51 37,58 C38,60 40,59 40,57 C39,51 41,45 45,42 C47,40 44,38 42,40 Z" />
+    <!-- Green Leaf Crown -->
+    <path
+        android:fillColor="#FF2EC44D"
+        android:pathData="M54,35 L42,27 L46,35 L35,34 L44,41 L54,38 L64,41 L73,34 L62,35 L66,27 Z" />
+    <!-- Golden Seeds -->
+    <path
+        android:fillColor="#FFFFD166"
+        android:pathData="M45,48 a1.8,2.4 0 1,0 3.6,0 a1.8,2.4 0 1,0 -3.6,0 Z
+                          M59,48 a1.8,2.4 0 1,0 3.6,0 a1.8,2.4 0 1,0 -3.6,0 Z
+                          M52,55 a1.8,2.4 0 1,0 3.6,0 a1.8,2.4 0 1,0 -3.6,0 Z
+                          M43,60 a1.8,2.4 0 1,0 3.6,0 a1.8,2.4 0 1,0 -3.6,0 Z
+                          M61,60 a1.8,2.4 0 1,0 3.6,0 a1.8,2.4 0 1,0 -3.6,0 Z
+                          M52,69 a1.8,2.4 0 1,0 3.6,0 a1.8,2.4 0 1,0 -3.6,0 Z" />
+    <!-- Golden Star Sparkle Top-Right -->
+    <path
+        android:fillColor="#FFFFE066"
+        android:pathData="M73,26 L75.5,31 L81,32 L77,35.8 L78,41 L73,38.5 L68,41 L69,35.8 L65,32 L70.5,31 Z" />
+</vector>

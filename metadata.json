@@ -1,0 +1,6 @@
+{
+  "name": "Fruit Bliss",
+  "description": "Colorful 8x8 fruit match-3 puzzle game with an adorable orange cartoon cat, Treasure Vault coin packs, Boost Forge power-ups, daily rewards, and offline progression.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

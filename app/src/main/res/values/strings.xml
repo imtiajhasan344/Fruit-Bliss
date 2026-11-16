@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Fruit Bliss</string>
+    <string name="store_title">Store</string>
+    <string name="theme_shop">THEME SHOP</string>
+    <string name="treasure_vault">Treasure Vault</string>
+    <string name="boost_forge">Boost Forge</string>
+    <string name="settings">Settings</string>
+    <string name="profile">Profile</string>
+    <string name="play">Play</string>
+    <string name="close">Close</string>
+    <string name="confirm_purchase">Confirm Purchase</string>
+    <string name="cancel">Cancel</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="claim">Claim</string>
+    <string name="next_level">Next Level</string>
+    <string name="retry">Retry</string>
+    <string name="home">Home</string>
+    <string name="level_label">Level %1$d</string>
+    <string name="score_label">Score</string>
+    <string name="target_label">Target</string>
+    <string name="moves_label">Moves</string>
+    <string name="time_label">Time</string>
+</resources>
