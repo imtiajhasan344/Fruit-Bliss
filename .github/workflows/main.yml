@@ -8,19 +8,45 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm install && npm run build
-      - run: |
+      - name: Prepare Web Files
+        run: |
+          PKG_FILE=$(find . -maxdepth 3 -name "package.json" | head -n 1)
+          if [ -n "$PKG_FILE" ]; then
+            APP_DIR=$(dirname "$PKG_FILE")
+            cd "$APP_DIR"
+            npm install
+            npm run build || true
+            if [ -d "dist" ]; then WEB_DIR="dist";
+            elif [ -d "build" ]; then WEB_DIR="build";
+            else WEB_DIR="."; fi
+            mkdir -p /tmp/web_assets
+            cp -r "$WEB_DIR"/* /tmp/web_assets/
+          else
+            HTML_FILE=$(find . -maxdepth 3 -name "*.html" | head -n 1)
+            APP_DIR=$(dirname "$HTML_FILE")
+            mkdir -p /tmp/web_assets
+            cp -r "$APP_DIR"/* /tmp/web_assets/
+            if [ ! -f "/tmp/web_assets/index.html" ] && [ -n "$HTML_FILE" ]; then
+              cp "$HTML_FILE" /tmp/web_assets/index.html
+            fi
+          fi
+      - name: Build Capacitor Android Project
+        run: |
+          mkdir -p cap_app/www
+          cp -r /tmp/web_assets/* cap_app/www/
+          cd cap_app
+          npm init -y
           npm install @capacitor/core @capacitor/cli @capacitor/android
-          npx cap init "Fruit Bliss" "com.aistudio.fruitbliss" --web-dir=dist
+          npx cap init "Fruit Bliss" "com.aistudio.fruitbliss" --web-dir=www
           npx cap add android
           npx cap sync
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
-      - run: cd android && chmod +x gradlew && ./gradlew assembleDebug
+      - name: Assemble Debug APK
+        run: cd cap_app/android && chmod +x gradlew && ./gradlew assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: app-debug
-          path: android/app/build/outputs/apk/debug/app-debug.apk
-          
+          path: cap_app/android/app/build/outputs/apk/debug/app-debug.apk
